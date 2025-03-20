@@ -1,0 +1,23 @@
+const TabItem = (props) => {
+  const { tabsItem, updateActiveTabId, isActive } = props;
+  const { tabId, displayText } = tabsItem;
+
+  const onClickTabItem = () => {
+    updateActiveTabId(tabId);
+  };
+
+  const activeTabClassName = isActive ? "active-tab-btn" : "";
+  return (
+    <li className="tab-item-container ">
+      <button
+        type="button"
+        className={`tab-btn ${activeTabClassName}`}
+        onClick={onClickTabItem}
+      >
+        {displayText}
+      </button>
+    </li>
+  );
+};
+
+export default TabItem;
